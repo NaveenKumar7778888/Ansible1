@@ -2,14 +2,13 @@
   apt:
     update_cache: yes
   changed_when: false
-- name: install apache2 pacakage
-  apt:
-    name: apache2
-    state: latest
-- name: install php support for apache
-  apt:
-    name: libapache2-mod-php
-    state: latest
+- name: install apache and php
+  tags: apache,php
+  package:
+    name:
+      - "{{ apache_package_name }}"
+      - "{{ php_package_name }}"
+
 - name: copy default html files for site
   tags: apache,apache2,httpd
   copy:
