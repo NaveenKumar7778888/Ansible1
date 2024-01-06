@@ -1,0 +1,6 @@
+- name: install marinadb server
+  tags: ubuntu,db,marinadb
+  apt:
+    name: mariadb-server
+    state: latest
+  when: ansible_distribution == "Ubuntu"

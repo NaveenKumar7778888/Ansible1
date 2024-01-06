@@ -1,2 +1,12 @@
+[file_servers]
 172.31.45.149
+
+[db_servers]
 172.31.33.58
+
+[workstations]
+172.31.45.149
+
+[web_servers]
+172.31.33.58
+

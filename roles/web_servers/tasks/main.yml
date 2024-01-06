@@ -1,0 +1,20 @@
+- name: update repository index
+  apt:
+    update_cache: yes
+  changed_when: false
+- name: install apache2 pacakage
+  apt:
+    name: apache2
+    state: latest
+- name: install php support for apache
+  apt:
+    name: libapache2-mod-php
+    state: latest
+- name: copy default html files for site
+  tags: apache,apache2,httpd
+  copy:
+    src: default_site.html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: 0644
